@@ -1,0 +1,36 @@
+spring:
+  application:
+    name: greeting-service
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+  cloud:
+    bus:
+      enabled: true
+  config:
+    import: configserver:http://localhost:8888
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, refresh, bus-refresh
+  endpoint:
+    refresh:
+      enabled: true
+    bus-refresh:
+      enabled: true
+
+my:
+  greeting: "Hello - application.yml"
+
+application:
+  specific:
+    config: "Greeting Service - application.yml"
+
+
+
+
+

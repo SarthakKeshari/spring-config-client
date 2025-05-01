@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: greeting-service
+
+  #  cloud:
+  #    config:
+  #      enabled: false
+  config:
+    import: configserver:http://localhost:8888
+
+my:
+  greeting: "Hello - Application.yml"
+
+application:
+  specific:
+    config: "Greeting Service - application-dev.yml"
